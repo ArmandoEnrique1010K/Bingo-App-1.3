@@ -1,10 +1,10 @@
 import { Button, Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
-import { useAppStore } from "../../../store/useAppStore";
-import Intro from "./Help/Intro";
-import Menu from "./Help/Menu";
-import Game from "./Help/Game";
-import Victory from "./Help/Victory";
-import PowerUp from "./Help/PowerUp";
+import { useAppStore } from "../../store/useAppStore";
+import Intro from "./components/Intro";
+import Menu from "./components/Menu";
+import Game from "./components/Game";
+import Victory from "./components/Victory";
+import PowerUp from "./components/PowerUp";
 
 export default function HelpModal() {
   const closeHelpModal = useAppStore((state) => state.closeHelpModal);

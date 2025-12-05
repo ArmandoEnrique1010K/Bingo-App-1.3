@@ -16,14 +16,14 @@ export default function Layout() {
   const getUnlockedLevelsFromStorage = useAppStore(
     (state) => state.getUnlockedLevelsFromStorage
   );
-  const toogleStartScreenLoading = useAppStore(
-    (state) => state.toogleStartScreenLoading
+  const loadedGame = useAppStore(
+    (state) => state.loadedGame
   );
   const getLevelNumberFromUrl = useAppStore(
     (state) => state.getLevelNumberFromUrl
   );
-  const isStartScreenButtonVisible = useAppStore(
-    (state) => state.isStartScreenButtonVisible
+  const isMenuLevelsVisible = useAppStore(
+    (state) => state.isMenuLevelsVisible
   );
   const getUnlockedPowerUpsFromStorage = useAppStore(
     (state) => state.getUnlockedPowerUpsFromStorage
@@ -38,7 +38,7 @@ export default function Layout() {
 
   useEffect(() => {
     setTimeout(() => {
-      toogleStartScreenLoading();
+      loadedGame();
     }, LOADING_TIME);
 
     preloadMusicFiles();
@@ -51,7 +51,7 @@ export default function Layout() {
   return (
     <div className="flex flex-col min-w-full h-screen">
       <div className="flex flex-row items-center justify-start sm:py-0 py-0 px-8  bg-gray-900 text-white shadow-lg">
-        {isStartScreenButtonVisible || (
+        {!isMenuLevelsVisible || (
           <>
             <CreditsButton />
             <MusicButton />
@@ -68,7 +68,7 @@ export default function Layout() {
         )}
       </div>
 
-      <main className={`${location.pathname === "/" && !isStartScreenButtonVisible ? "bg-with-logo bg-gray-800" : "bg-gray-800"}  flex-grow`}>
+      <main className={`${location.pathname === "/" && isMenuLevelsVisible ? "bg-with-logo bg-gray-800" : "bg-gray-800"}  flex-grow`}>
         <Outlet />
       </main>
     </div>

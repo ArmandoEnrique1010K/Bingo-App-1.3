@@ -9,7 +9,7 @@
 @layer components {
   /* Imagen de fondo alineado a la derecha y arriba */
   .bg-with-logo {
-    background-image: url('../public/images/bigLogo.svg');
+    background-image: url('/images/bigLogo.svg');
     background-size: contain;
     background-position-x: right;
     background-position-y: top;

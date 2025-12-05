@@ -22,5 +22,8 @@ export const UNLOCK_BUTTON_GENERATE_TARGETS_DELAY = 1500
 // Numero maximo de powerups seleccionados por un nivel
 export const MAX_POWERUPS = 3;
 
+// Número estrella (corresponde al powerup #9)
+export const STAR_NUMBER = 100;
+
 // Versión actual de la aplicación
-export const APP_VERSION = "1.3"
+export const APP_VERSION = "1.3.1"

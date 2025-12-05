@@ -9,18 +9,18 @@ export default function MenuView() {
   const unlockedLevelsList = useAppStore((state) => state.unlockedLevelsList);
   const levelData = useAppStore((state) => state.levelData);
   const getColorLevel = useAppStore((state) => state.getColorLevel);
-  const isLoadingStartScreen = useAppStore(
-    (state) => state.isLoadingStartScreen
+  const isLoadingGame = useAppStore(
+    (state) => state.isLoadingGame
   );
-  const isStartScreenButtonVisible = useAppStore(
-    (state) => state.isStartScreenButtonVisible
+  const isMenuLevelsVisible = useAppStore(
+    (state) => state.isMenuLevelsVisible
   );
-  const toogleStartScreenButton = useAppStore(
-    (state) => state.toogleStartScreenButton
+  const showLevelsMenu = useAppStore(
+    (state) => state.showLevelsMenu
   );
   const playSound = useAppStore((state) => state.playSound);
   const changeMusic = useAppStore((state) => state.changeMusic);
-  const setIsPlayingMusic = useAppStore((state) => state.setIsPlayingMusic);
+  // const setIsPlayingMusic = useAppStore((state) => state.setIsPlayingMusic);
 
   useEffect(() => {
     changeMusic(levelData.music);
@@ -31,17 +31,13 @@ export default function MenuView() {
       <h1 className="text-4xl font-bold text-center my-8">
         BingoApp <span className="text-xl">v{APP_VERSION}</span>
       </h1>
-      {isLoadingStartScreen === true ? (
+      {isLoadingGame === true ? (
         <Loader />
-      ) : isStartScreenButtonVisible === true ? (
+      ) : isMenuLevelsVisible === false ? (
         <button
           className={`w-full flex-grow flex items-center justify-center bg-${levelData.color}-500 text-white text-2xl font-semibold p-4 cursor-pointer `}
           onClick={() => {
-            toogleStartScreenButton();
-            playSound(CLICK_SOUND);
-            setIsPlayingMusic(true);
-            changeMusic(levelData.music);
-            // startMusic(levelData.music);
+            showLevelsMenu();
           }}
         >
           Iniciar juego

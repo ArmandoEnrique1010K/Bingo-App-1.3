@@ -1,6 +1,6 @@
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
 import { useAppStore } from "../../store/useAppStore";
-import CreditsModal from "./Modal/CreditsModal";
+import CreditsModal from "../Credits/CreditsModal";
 
 export default function CreditsButton() {
   const levelData = useAppStore((state) => state.levelData);

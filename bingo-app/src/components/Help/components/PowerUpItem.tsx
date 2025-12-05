@@ -1,4 +1,4 @@
-import { powerups } from "../../../../data/powerups";
+import { powerups } from "../../../data/powerups";
 
 interface PowerUpItemProps {
     id: number;

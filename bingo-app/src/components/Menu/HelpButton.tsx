@@ -1,5 +1,5 @@
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
-import HelpModal from "./Modal/HelpModal";
+import HelpModal from "../Help/HelpModal";
 import { useAppStore } from "../../store/useAppStore";
 
 export default function HelpButton() {

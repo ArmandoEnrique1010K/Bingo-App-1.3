@@ -1,11 +1,11 @@
 import { Button, Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
-import { useAppStore } from "../../../store/useAppStore";
-import Intro from "./Credits/Intro";
-import Technologies from "./Credits/Technologies";
-import Libraries from "./Credits/Libraries";
-import Sounds from "./Credits/Sounds";
-import Musics from "./Credits/Musics";
-import Others from "./Credits/Others";
+import { useAppStore } from "../../store/useAppStore";
+import Intro from "./components/Intro";
+import Technologies from "./components/Technologies";
+import Libraries from "./components/Libraries";
+import Sounds from "./components/Sounds";
+import Musics from "./components/Musics";
+import Others from "./components/Others";
 
 export default function CreditsModal() {
   const showCreditsModal = useAppStore((state) => state.showCreditsModal);

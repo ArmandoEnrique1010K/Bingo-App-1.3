@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useAppStore } from "../../store/useAppStore";
 import {
   MAX_TURNS,
+  STAR_NUMBER,
   UNLOCK_BUTTON_GENERATE_TARGETS_DELAY,
 } from "../../constants/defaultConfigs";
 
@@ -74,7 +75,7 @@ export default function TargetNumbers() {
               key={index}
               className=" sm:w-11 sm:h-11 w-7 h-7 flex items-center justify-center border-2 border-none bg-white text-black font-semibold rounded-full sm:text-lg text-sm shadow-md shadow-black"
             >
-              {randomNumberObjective.hasActivated && n === 100 ? '⭐' : n}
+              {randomNumberObjective.hasActivated && n === STAR_NUMBER ? '⭐' : n}
             </div>
           ))}
         </div>
