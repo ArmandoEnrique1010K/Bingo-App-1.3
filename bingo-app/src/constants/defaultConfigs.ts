@@ -26,4 +26,4 @@ export const MAX_POWERUPS = 3;
 export const STAR_NUMBER = 100;
 
 // Versión actual de la aplicación
-export const APP_VERSION = "1.3.1"
+export const APP_VERSION = "1.3.2"
